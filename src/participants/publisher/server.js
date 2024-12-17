@@ -13,10 +13,20 @@
  See the License for the specific language governing permissions and
  limitations under the License.
  */
- function scoreAd() {
-  return {
-    desirability: 1,
-  };
-}
 
-function reportResult() {}
+/**
+ * Publisher server
+ */
+import express from 'express';
+import morgan from 'morgan';
+
+const publisher = express();
+publisher.use(
+  morgan(
+    '[Publisher] [:date[clf]] :remote-addr :remote-user :method :url :status :response-time ms'
+  )
+);
+
+publisher.use(express.static('src/participants/publisher'));
+
+export default publisher;

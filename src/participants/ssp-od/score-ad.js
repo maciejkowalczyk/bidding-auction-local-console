@@ -14,11 +14,22 @@
  limitations under the License.
  */
 
- function generateBid() {
+/**
+ * Scoring logic for the SSP-OD on-device seller
+ *
+ * This file is fetched by the browser
+ */
+function scoreAd(
+  adMetadata,
+  bid,
+  auctionConfig,
+  trustedScoringSignals,
+  browserSignals
+) {
   return {
-    bid: 1,
-    render: 'http://localhost:6000/ad.html'
-  }
+    desirability: bid,
+    allowComponentAuction: true,
+  };
 }
 
-function reportWin() {}
+function reportResult(auctionConfig, browserSignals) {}

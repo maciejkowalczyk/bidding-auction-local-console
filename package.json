@@ -1,23 +1,30 @@
 {
-  "name": "bidding-auction-local-console",
+  "name": "bidding-auction-local-testing-app",
   "version": "0.1.0",
-  "description": "Local developer console for Bidding and Auction Services",
+  "description": "Local testing app for Bidding and Auction Services",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node ./src/server.js",
-    "watch": "node --watch ./src/server.js"
+    "start": "node ./src/index.js",
+    "dev": "node --watch ./src/index.js",
+    "lint": "npx prettier ./src -write"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/privacysandbox/bidding-auction-local-console.git"
+    "url": "git+https://github.com/privacysandbox/bidding-auction-local-testing-app.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/privacysandbox/bidding-auction-local-console/issues"
-  },
-  "homepage": "https://github.com/privacysandbox/bidding-auction-local-console#readme",
+  "homepage": "https://github.com/privacysandbox/bidding-auction-local-testing-app#readme",
   "dependencies": {
-    "express": "^4.21.1"
+    "@grpc/grpc-js": "^1.12.2",
+    "@grpc/proto-loader": "^0.7.13",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "mkcert": "^3.2.0",
+    "prettier": "^3.3.3"
   }
 }
